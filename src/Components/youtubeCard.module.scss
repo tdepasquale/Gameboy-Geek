@@ -1,0 +1,62 @@
+.card {
+  --transition-time: 0.4s;
+
+  transition: all var(--transition-time) cubic-bezier(0.175, 0.885, 0, 1);
+  background-color: #fff;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1);
+  opacity: 1;
+
+  .cardLink {
+    text-decoration: none;
+  }
+
+  .cardImageContainer {
+    width: 100%;
+    filter: blur(0);
+    opacity: 1;
+    padding: 2rem;
+  }
+
+  .cardImage {
+    width: 100%;
+    height: 100%;
+  }
+
+  &:hover {
+    box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05, 1.05);
+
+    .cardInfo {
+      opacity: 1;
+      transform: translateY(-5rem);
+    }
+
+    .cardImageContainer {
+      filter: blur(1rem);
+      opacity: 0.3;
+    }
+  }
+
+  .cardInfo {
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
+    transition: all var(--transition-time);
+    color: #333;
+    padding: 2rem;
+    z-index: 3;
+    transform: translateY(0);
+
+    @media only screen and (max-width: 50em) {
+      position: relative;
+      opacity: 1;
+      background-color: rgba(228, 30, 33, 0.2);
+      margin-top: 1rem;
+      // padding-top: 3rem;
+      // clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
+    }
+  }
+}
